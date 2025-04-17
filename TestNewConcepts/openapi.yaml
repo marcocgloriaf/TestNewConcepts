@@ -1,0 +1,129 @@
+openapi: "3.0.3"
+info:
+  title: Countries
+  version: 1.0.0
+servers:
+  - url: https://jsonplaceholder.typicode.com
+    description: "Countries service"
+paths:
+  /comments:
+    get:
+      operationId: getComments
+      responses:
+        '200':
+          description: "Returns json file with posts"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentsArray'
+
+  /posts:
+    get:
+      operationId: getPosts
+      responses:
+        '200':
+          description: "Returns json file with posts"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostArray'
+
+components:
+  schemas:
+    Currency:
+      type: object
+      properties:
+        name:
+            type: string
+            description: "name of the currency of the country"
+        code:
+            type: string
+            description: "code of the currency of the country"
+        symbol:
+            type: string
+            description: "symbol of the currency of the country"
+    Language:
+        type: object
+        properties:
+            name:
+                type: string
+                description: "name of the language of the country"
+            code:
+                type: string
+                description: "code of the language of the country"
+    Country:
+        type: object
+        properties:
+            capital:
+                type: string
+                description: "name of the capital of the country"
+            code:
+                type: string
+                description: "code of the capital of the country"
+            flag:
+                type: string
+                description: "url for the country flag"
+            name:
+                type: string
+                description: "name of the country"
+            region:
+                type: string
+                description: "region of the country"
+            language:
+                $ref: '#/components/schemas/Language'
+            currency:
+                $ref: '#/components/schemas/Currency'
+                
+    Posts:
+        type: object
+        properties:
+            userId:
+                type: integer
+                format: int32
+                description: "name of the capital of the country"
+            id:
+                type: integer
+                format: int32
+                description: "code of the capital of the country"
+            title:
+                type: string
+                description: "url for the country flag"
+            body:
+                type: string
+                description: "name of the country"
+
+    Comments:
+        type: object
+        properties:
+            postId:
+                type: integer
+                format: int32
+                description: "post id"
+            id:
+                type: integer
+                format: int32
+                description: "comment id"
+            name:
+                type: string
+                description: "user name"
+            email:
+                type: string
+                description: "user email"
+            body:
+                type: string
+                description: "comment body"
+
+    CountryArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Country'
+        
+    PostArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Posts'
+        
+    CommentsArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Comments'
