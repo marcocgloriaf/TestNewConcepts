@@ -34,9 +34,22 @@
 		07B960C02DA732C9008FA33D /* TestNewConceptsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestNewConceptsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		07DC08062DB1C3270034BE86 /* Exceptions for "TestNewConcepts" folder in "TestNewConceptsUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/MainTabbarView.swift,
+			);
+			target = 07B960BF2DA732C9008FA33D /* TestNewConceptsUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		07B960A92DA732C6008FA33D /* TestNewConcepts */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				07DC08062DB1C3270034BE86 /* Exceptions for "TestNewConcepts" folder in "TestNewConceptsUITests" target */,
+			);
 			path = TestNewConcepts;
 			sourceTree = "<group>";
 		};

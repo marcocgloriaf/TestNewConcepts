@@ -27,7 +27,7 @@ struct TestNewConceptsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabbarView()
         }
         .modelContainer(sharedModelContainer)
         .environmentObject(viewModel)

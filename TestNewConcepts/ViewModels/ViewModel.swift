@@ -36,6 +36,24 @@ class ViewModel: ObservableObject {
         }
     }
 
+    func getComments() {
+        Task {
+            let info = await NetworkManager.shared.fetchComments()
+            let posts = info.0
+            let error = info.1
+            if let posts = posts {
+                // do table reload
+                await MainActor.run {
+                    self.comments = posts
+                }
+            }
+            if let error = error {
+                // do error part
+                self.netManagerError = error
+            }
+        }
+    }
+
     func getCountries() {
         Task {
             let info = await NetworkManager.shared.fetchData()
