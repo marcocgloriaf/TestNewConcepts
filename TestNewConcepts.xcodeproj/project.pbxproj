@@ -38,6 +38,8 @@
 		07DC08062DB1C3270034BE86 /* Exceptions for "TestNewConcepts" folder in "TestNewConceptsUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Views/CountriesView.swift,
+				Views/CountryDetailView.swift,
 				Views/MainTabbarView.swift,
 			);
 			target = 07B960BF2DA732C9008FA33D /* TestNewConceptsUITests */;

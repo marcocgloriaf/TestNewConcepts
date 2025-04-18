@@ -24,6 +24,13 @@ struct MainTabbarView: View {
                 .tabItem {
                     Label("Comments", systemImage: "square.and.pencil")
                 }
+            CountriesView()
+                .modelContainer(for: Item.self, inMemory: true)
+                .environmentObject(viewModel)
+                .tabItem {
+                    Label("Countries", systemImage: "map")
+                }
+
         }
     }
 }

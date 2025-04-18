@@ -31,7 +31,9 @@ class ViewModel: ObservableObject {
             }
             if let error = error {
                 // do error part
-                self.netManagerError = error
+                await MainActor.run {
+                    self.netManagerError = error
+                }
             }
         }
     }
