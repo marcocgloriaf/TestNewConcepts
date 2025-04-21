@@ -15,7 +15,7 @@ struct CountriesView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach($viewModel.countries, id: \.self) { $country in
+                ForEach(searchResults, id: \.self) { country in
                     let title = country.name ?? ""
                     NavigationLink {
                         CountryDetailView(country: country)
@@ -37,15 +37,21 @@ struct CountriesView: View {
         } detail: {
             Text("Select an item")
         }
-        .searchable(text: $searchCountry)
+        .searchable(text: $searchCountry) {
+            ForEach(searchResults, id: \.self) { result in
+                //Text("Are you looking for \(result)?").searchCompletion(result)
+            }
+
+            
+        }
         
     }
     
     var searchResults: [Countries] {
-        guard !searchCountry.isEmpty else {
-            return []
+        if searchCountry.isEmpty {
+            return viewModel.countries
         }
-        return countries.filter {
+        return viewModel.countries.filter {
             return $0.name!.contains(searchCountry)
         }
     }
