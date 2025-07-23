@@ -4,6 +4,8 @@
  For testing purposes we use the following service: https://jsonplaceholder.typicode.com
 
 Also include testing for:
-Using global actor to replace singletons
-Using metal to do button animations
-Using actors to handle info to swift ui
+1. Using global actor to replace singletons
+2. Using metal to do button animations
+3. Using actors to handle info to swift ui
+4. MVVM and observables
+5. async await
